@@ -5,3 +5,30 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Airports
+lax = Airport.create(code: "LAX")
+sfo = Airport.create(code: "SFO")
+nyc = Airport.create(code: "NYC")
+jfk = Airport.create(code: "JFK")
+
+# Flights
+lax_sfo = Flight.create(from_airport_id: lax.id, to_airport_id: sfo.id, start_time: Time.now, duration: 1.hour)
+lax_nyc = Flight.create(from_airport_id: lax.id, to_airport_id: nyc.id, start_time: Time.now, duration: 2.hours)
+lax_jfk = Flight.create(from_airport_id: lax.id, to_airport_id: jfk.id, start_time: Time.now, duration: 3.hours)
+sfo_lax = Flight.create(from_airport_id: sfo.id, to_airport_id: lax.id, start_time: 1.hour.from_now, duration: 1.hour)
+sfo_nyc = Flight.create(from_airport_id: sfo.id, to_airport_id: nyc.id, start_time: 2.hours.from_now, duration: 2.hours)
+sfo_jfk = Flight.create(from_airport_id: sfo.id, to_airport_id: jfk.id, start_time: 3.hours.from_now, duration: 3.hours)
+nyc_jfk = Flight.create(from_airport_id: lax.id, to_airport_id: sfo.id, start_time: 1.day.from_now, duration: 1.hour)
+nyc_sfo = Flight.create(from_airport_id: lax.id, to_airport_id: nyc.id, start_time: 2.days.from_now, duration: 2.hours)
+jfk_lax = Flight.create(from_airport_id: jfk.id, to_airport_id: lax.id, start_time: 3.days.from_now, duration: 3.hours)
+
+lax_sfo = Flight.create(from_airport_id: lax.id, to_airport_id: sfo.id, start_time: Time.now, duration: 1.hour)
+lax_nyc = Flight.create(from_airport_id: lax.id, to_airport_id: nyc.id, start_time: Time.now, duration: 2.hours)
+lax_jfk = Flight.create(from_airport_id: lax.id, to_airport_id: jfk.id, start_time: Time.now, duration: 3.hours)
+sfo_lax = Flight.create(from_airport_id: sfo.id, to_airport_id: lax.id, start_time: 1.hour.from_now, duration: 1.hour)
+sfo_nyc = Flight.create(from_airport_id: sfo.id, to_airport_id: nyc.id, start_time: 2.hours.from_now, duration: 2.hours)
+sfo_jfk = Flight.create(from_airport_id: sfo.id, to_airport_id: jfk.id, start_time: 3.hours.from_now, duration: 3.hours)
+nyc_jfk = Flight.create(from_airport_id: lax.id, to_airport_id: sfo.id, start_time: 1.day.from_now, duration: 1.hour)
+nyc_sfo = Flight.create(from_airport_id: lax.id, to_airport_id: nyc.id, start_time: 2.days.from_now, duration: 2.hours)
+jfk_lax = Flight.create(from_airport_id: jfk.id, to_airport_id: lax.id, start_time: 3.days.from_now, duration: 3.hours)

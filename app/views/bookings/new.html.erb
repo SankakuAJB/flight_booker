@@ -1,0 +1,20 @@
+<h1>Passenger Information</h1>
+
+<%= "Purchasing tickets for #{pluralize(@num_passengers, "passenger")}" %><br />
+<%= "Flight ##{@flight.id} from #{@flight.from_airport.code} to #{@flight.to_airport.code} on #{@flight.start_time.to_date}" %><hr />
+
+<%= form_for @booking do |f| %>
+
+	<%= f.hidden_field :flight_id, value: @flight.id %>
+
+	<%= "Please enter the following information:" %><br />
+
+	<%= f.fields_for :passengers do |passenger_form| %>
+		Name: <%= passenger_form.text_field :name %>
+		Email: <%= passenger_form.text_field :email %>
+		<br />
+	<% end %>
+
+	<%= f.submit %>
+
+<% end %>

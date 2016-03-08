@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  root              'flights#index'
+
+  resources :bookings, only: [:new, :create, :show]
+  resources :passengers, only: [:create]
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
